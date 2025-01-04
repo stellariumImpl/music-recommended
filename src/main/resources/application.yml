@@ -1,0 +1,84 @@
+# application.yml
+server:
+  port: 8080
+  servlet:
+    context-path: /api
+
+spring:
+  profiles:
+    active: dev
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    druid:
+      initial-size: 5
+      min-idle: 5
+      max-active: 20
+      max-wait: 60000
+      test-while-idle: true
+      time-between-eviction-runs-millis: 60000
+      min-evictable-idle-time-millis: 300000
+      validation-query: SELECT 1
+      test-on-borrow: false
+      test-on-return: false
+      filters: stat,wall
+      filter:
+        stat:
+          log-slow-sql: true
+          slow-sql-millis: 1000
+  data:
+    redis:
+      host: localhost
+      port: 6379
+      database: 0
+      timeout: 10s
+      connect-timeout: 10s
+      client-type: lettuce
+      lettuce:
+        pool:
+          enabled: true
+          max-active: 8
+          max-wait: -1
+          max-idle: 8
+          min-idle: 0
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+
+mybatis-plus:
+  mapper-locations: classpath*:/mapper/**/*.xml
+  type-aliases-package: com.felix.music.modules.*.entity
+  configuration:
+    map-underscore-to-camel-case: true
+    cache-enabled: false
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      logic-delete-field: deleted
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+  api-docs:
+    path: /v3/api-docs
+
+jwt:
+  secret: Zk9SaWdUQm9ZQlN3bkhUYWxmWFFxcTg5bWVGMWFGM0s=
+  expiration: 86400000  # 24 hours
+
+aliyun:
+  oss:
+    endpoint: https://oss-cn-shanghai.aliyuncs.com
+    access-key-id: LTAI5t7dnkEYqcJ6MtBAKx4p
+    access-key-secret: aYT4K1CjVNSvwF1e2NCkMzYelWNIgj
+    bucket-name: my-music-felix
+    url-prefix: https://my-music-felix.oss-cn-shanghai.aliyuncs.com
+
+logging:
+  level:
+    org.springframework: DEBUG
+    org.springframework.security: DEBUG
+    com.felix.mymusicserver: DEBUG
