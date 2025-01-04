@@ -72,9 +72,9 @@ jwt:
 aliyun:
   oss:
     endpoint: https://oss-cn-shanghai.aliyuncs.com
-    access-key-id: LTAI5t7dnkEYqcJ6MtBAKx4p
-    access-key-secret: aYT4K1CjVNSvwF1e2NCkMzYelWNIgj
-    bucket-name: my-music-felix
+    access-key-id:
+    access-key-secret:
+    bucket-name:
     url-prefix: https://my-music-felix.oss-cn-shanghai.aliyuncs.com
 
 logging:
