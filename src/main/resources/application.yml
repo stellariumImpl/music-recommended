@@ -69,13 +69,6 @@ jwt:
   secret: Zk9SaWdUQm9ZQlN3bkhUYWxmWFFxcTg5bWVGMWFGM0s=
   expiration: 86400000  # 24 hours
 
-aliyun:
-  oss:
-    endpoint: https://oss-cn-shanghai.aliyuncs.com
-    access-key-id:
-    access-key-secret:
-    bucket-name:
-    url-prefix: https://my-music-felix.oss-cn-shanghai.aliyuncs.com
 
 logging:
   level:
