@@ -25,7 +25,7 @@ import java.util.Base64;
 @Tag(name = "用户管理")
 @Slf4j
 @RestController
-@RequestMapping("/api/user")
+@RequestMapping("/user")
 @RequiredArgsConstructor
 public class UserController {
 

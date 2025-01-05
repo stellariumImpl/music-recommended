@@ -33,7 +33,7 @@ public class SecurityConfig {
                         // Swagger
                         .requestMatchers("/v3/api-docs/**", "/swagger-ui/**", "/swagger-ui.html").permitAll()
                         // 公开接口
-                        .requestMatchers("/api/user/login", "/api/user/register").permitAll()
+                        .requestMatchers("/user/login", "/user/register").permitAll()
                         // 所有其他请求都需要认证
                         .anyRequest().authenticated()
                 )
